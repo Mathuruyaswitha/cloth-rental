@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Section</title>
+    <link rel="stylesheet" href="women-background.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Women's Section</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="menu">
+                <li><a href="#">Ethnic</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Formal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            var searchValue = this.value.toLowerCase();
+            var items = document.querySelectorAll('.item'); // Select all items to search within
+            items.forEach(function(item) {
+                var text = item.textContent.toLowerCase();
+                if (text.includes(searchValue)) {
+                    item.style.display = 'block'; // Show matching items
+                } else {
+                    item.style.display = 'none'; // Hide non-matching items
+                }
+            });
+        });
+    </script>
+</body>
+</html>

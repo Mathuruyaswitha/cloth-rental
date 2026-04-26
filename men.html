@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Section</title>
+    <link rel="stylesheet" href="men.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Men's Section</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="menu">
+                <!-- Updated the href attribute to point to Ethnic.html -->
+                <li><a href="Ethnic.html">Ethnic</a></li>
+                <li><a href="Accessories.html">Accessories</a></li>
+                <li><a href="Suits.html">Suits</a></li>
+                <li><a href="Formals.html">Formals</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content">
+        <div class="container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <!-- No items currently present -->
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            var searchValue = this.value.toLowerCase();
+            var items = document.querySelectorAll('.item'); // Select all items to search within
+            items.forEach(function(item) {
+                var text = item.textContent.toLowerCase();
+                if (text.includes(searchValue)) {
+                    item.style.display = 'block'; // Show matching items
+                } else {
+                    item.style.display = 'none'; // Hide non-matching items
+                }
+            });
+        });
+    </script>
+</body>
+</html>
